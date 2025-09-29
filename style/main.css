@@ -1,0 +1,105 @@
+
+*{
+    margin: 0;
+    box-sizing: border-box;
+    padding: 0;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    font-family: monospace;
+    list-style: none;
+    transition: 0.3s;
+
+
+}
+:root{
+    --bg: #0f101d;
+    --bg2: #1b1c33;
+    --main_color: #00b3b1;
+    --bg3: #323354;
+    --bg4: #494a6b;
+    --sec: #00698c;
+}
+::selection{
+    color: white;
+    background-color: var(--main_color);
+}
+::-webkit-scrollbar{
+    display: none;
+}
+body{
+    height: 100dvh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--bg);
+}
+.container{
+    width: 550px;
+    height: auto;
+    background-color: var(--bg2);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 0.6rem;
+}
+.container input{
+        width: 100%;
+    background-color: var(--bg);
+    padding: 2rem 1rem;
+    text-align: end;
+    color: var(--main_color);
+    caret-color: var(--main_color);
+    font-size: 2rem;
+}
+.container .buttons{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.3rem;
+}
+
+.buttons button{
+    background-color: var(--bg3);
+    aspect-ratio: 2 / 1.2;
+    cursor: pointer;
+    font-size: 1.5rem;
+        color: white;
+}
+.buttons button:hover{
+    background-color: var(--bg4);
+}
+.buttons .submit{
+grid-column: span 2;
+aspect-ratio: unset;
+background-color: var(--sec);
+
+}
+.buttons .submit:hover{
+    background-color: var(--main_color);
+}
+.buttons .operator{
+    color: var(--main_color);
+}
+
+
+
+@media (max-width:570px){
+    .container{
+        width: 380px;
+    }
+    .buttons button{
+        aspect-ratio: 2/1.5;
+    }
+}
+@media (max-width:400px){
+    .container{
+        width: 85%;
+    }
+    .buttons button{
+        aspect-ratio: 1;
+    }
+    .container input{
+        padding: 3rem 1.5rem;
+        font-size: 2.5rem;
+    }
+}
