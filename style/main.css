@@ -13,12 +13,13 @@
 
 }
 :root{
-    --bg: #0f101d;
-    --bg2: #1b1c33;
-    --main_color: #00b3b1;
-    --bg3: #323354;
-    --bg4: #494a6b;
-    --sec: #00698c;
+    --bg: #0c0d11;
+    --bg2: #13151c;
+    --main_color: #6366f1;
+    --bg3: #1e2130;
+    --bg4: #2a2e45;
+    --red:#f87171;
+    --sec: #818cf8;
 }
 ::selection{
     color: white;
@@ -35,71 +36,98 @@ body{
     background-color: var(--bg);
 }
 .container{
-    width: 550px;
-    height: auto;
+    height: 90%;
+    border-radius: 30px;
     background-color: var(--bg2);
     display: flex;
     flex-direction: column;
+    width: 400px;
     gap: 1rem;
-    padding: 0.6rem;
+    padding: 0.5rem;
+    border: 1px solid var(--bg4);
+}
+.container hr{
+    width: 100%;
+    height: 1px;
+    background-color: var(--bg4);
+}
+.container .result-field{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+.container .history{
+    height: 3rem;
+    width: 100%;
+    padding: 0 1rem;
+    text-align: end;
+    display: flex;
+    color: var(--main_color);
+    opacity: 0.6;
+    font-size: 1rem;
+    justify-content: end;
+    align-items: center;
 }
 .container input{
-        width: 100%;
-    background-color: var(--bg);
-    padding: 2rem 1rem;
+    width: 100%;
     text-align: end;
+    padding: 0 1rem;
     color: var(--main_color);
     caret-color: var(--main_color);
-    font-size: 2rem;
+    font-size: 3rem;
 }
 .container .buttons{
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 0.3rem;
+    grid-template-rows: repeat(5, 1fr);
+    gap: 0.5rem;
+    height: 100%;
 }
 
 .buttons button{
     background-color: var(--bg3);
-    aspect-ratio: 2 / 1.2;
     cursor: pointer;
-    font-size: 1.5rem;
-        color: white;
+    font-size: 1.8rem;
+    color: white;
+    border-radius: 0.3rem;
+}
+.buttons .clear{
+    color: var(--red);
 }
 .buttons button:hover{
     background-color: var(--bg4);
 }
+.buttons .sp:hover{
+    background-color: color-mix(in srgb, currentColor 30%, black 10%);
+}
 .buttons .submit{
 grid-column: span 2;
 aspect-ratio: unset;
-background-color: var(--sec);
+background-color: var(--main_color);
 
 }
 .buttons .submit:hover{
-    background-color: var(--main_color);
+    background-color: var(--sec);
 }
 .buttons .operator{
     color: var(--main_color);
+
+}
+.buttons .sp{
+        background-color: 
+color-mix(in srgb, currentColor 20%, black 10%);
 }
 
 
 
 @media (max-width:570px){
     .container{
-        width: 380px;
+        width: 85%;
     }
-    .buttons button{
-        aspect-ratio: 2/1.5;
-    }
+
 }
 @media (max-width:400px){
     .container{
-        width: 85%;
-    }
-    .buttons button{
-        aspect-ratio: 1;
-    }
-    .container input{
-        padding: 3rem 1.5rem;
-        font-size: 2.5rem;
+        width: 95%;
     }
 }
